@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hosea Imbo Agure — Doctoral Researcher at Mid Sweden University working on computational imaging, inverse problems and algorithm unrolling." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Hosea Imbo Agure</title>
+
+  <style>
+    :root {
+      --navy: #0b3a67;
+      --blue: #1d75b8;
+      --text: #222;
+      --muted: #5f6670;
+      --line: #e8edf2;
+      --soft: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 74px 0 64px;
+      display: grid;
+      grid-template-columns: 305px minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* LEFT PROFILE COLUMN */
+    .profile {
+      text-align: center;
+      position: sticky;
+      top: 38px;
+    }
+
+    .portrait {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      margin: 0 auto 24px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.10);
+    }
+
+    .name {
+      margin: 0;
+      color: var(--navy);
+      font-size: 28px;
+      line-height: 1.18;
+      font-weight: 750;
+      letter-spacing: -.02em;
+    }
+
+    .role {
+      margin-top: 14px;
+      font-size: 17px;
+      color: #3e4349;
+    }
+
+    .dept,
+    .university,
+    .place {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dept {
+      margin-top: 4px;
+    }
+
+    .university {
+      margin-top: 1px;
+    }
+
+    .place {
+      margin-top: 1px;
+    }
+
+    /* CLICKABLE ICON ROW */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 21px;
+      margin-top: 25px;
+    }
+
+    .icon-link {
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      border: 1px solid transparent;
+      transition: background .16s ease, border-color .16s ease,
+                  transform .16s ease, color .16s ease;
+    }
+
+    .icon-link:hover,
+    .icon-link:focus-visible {
+      background: #f1f6fb;
+      border-color: #dce8f2;
+      color: var(--blue);
+      transform: translateY(-2px);
+      text-decoration: none;
+      outline: none;
+    }
+
+    .icon-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .icon-link.orcid svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .icon-caption {
+      margin-top: 12px;
+      color: #7a8088;
+      font-size: 12px;
+    }
+
+    /* RIGHT CONTENT */
+    .content {
+      min-width: 0;
+    }
+
+    section {
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: -.015em;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 16.5px;
+      color: #272727;
+    }
+
+    .education-line {
+      margin-bottom: 12px;
+    }
+
+    .education-line strong {
+      color: #172f4a;
+    }
+
+    .research-highlight {
+      margin-top: 17px;
+      padding: 14px 16px;
+      border-left: 3px solid #8db7d9;
+      background: var(--soft);
+      border-radius: 0 7px 7px 0;
+      color: #344455;
+      font-size: 15.5px;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px 28px;
+      margin-top: 4px;
+    }
+
+    .interest {
+      position: relative;
+      padding-left: 15px;
+      font-size: 16px;
+      color: #2a3541;
+    }
+
+    .interest::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 4px 0 32px;
+    }
+
+    footer {
+      margin-top: 46px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: #7a8088;
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .site {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding-top: 36px;
+      }
+
+      .profile {
+        position: static;
+      }
+
+      .content {
+        width: min(760px, 100%);
+        margin: 0 auto;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .portrait {
+        width: 130px;
+        height: 130px;
+      }
+
+      .name {
+        font-size: 25px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="site">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="profile" aria-label="Profile and contact links">
+      <img
+        src="hosea_headshot.jpg"
+        alt="Portrait of Hosea Imbo Agure"
+        class="portrait"
+      />
+
+      <h1 class="name">Hosea Imbo Agure</h1>
+
+      <div class="role">Doctoral Researcher</div>
+      <div class="dept">Computer Engineering</div>
+      <div class="university">Mid Sweden University</div>
+      <div class="place">Sundsvall, Sweden</div>
+
+      <nav class="social-icons" aria-label="Academic and social links">
+
+        <!-- Email -->
+        <a
+          class="icon-link"
+          href="mailto:hosea.agure@miun.se"
+          aria-label="Email Hosea Agure"
+          title="Email"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          class="icon-link"
+          href="https://www.linkedin.com/in/hoseaagure1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Hosea Agure on LinkedIn"
+          title="LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.94 8.5H3.56V19h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.25 6.92 1.96 1.96 0 0 0 5.25 3ZM20.44 12.91c0-3.17-1.69-4.64-3.95-4.64-1.82 0-2.63 1-3.08 1.7V8.5h-3.38V19h3.38v-5.2c0-1.37.26-2.7 1.96-2.7 1.67 0 1.69 1.56 1.69 2.79V19h3.38v-6.09Z"/>
+          </svg>
+        </a>
+
+        <!-- ORCID -->
+        <a
+          class="icon-link orcid"
+          href="https://orcid.org/0009-0006-6240-9057"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Hosea Agure ORCID profile"
+          title="ORCID"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.17 7.1a1.04 1.04 0 1 1 0-2.08 1.04 1.04 0 0 1 0 2.08ZM9.07 18H7.26V8.84h1.81V18Zm3.15 0h-1.8V5.12h4.28c4.15 0 5.98 2.97 5.98 6.44 0 3.52-2.08 6.44-5.98 6.44h-2.48Zm0-1.61h2.3c2.82 0 4.32-1.89 4.32-4.83 0-2.86-1.58-4.83-4.32-4.83h-2.3v9.66Z"/>
+          </svg>
+        </a>
+      </nav>
+
+      <div class="icon-caption">Email · LinkedIn · ORCID</div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+      <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+          I am a Doctoral Researcher in Computer Engineering at
+          Mid Sweden University, Sweden. My academic background
+          spans electrical engineering, telecommunications, signal processing,
+          and computational imaging.
+        </p>
+
+        <p class="education-line">
+          I am currently pursuing a PhD in Computer Engineering
+          at Mid Sweden University. Before beginning my doctoral studies, I
+          completed a double-degree MSc in Telecommunications
+          Engineering and ICT for Internet and Multimedia at the
+          Polytechnic University of Madrid and the
+          University of Padua.
+        </p>
+
+        <p>
+          I received my BSc in Electrical Engineering from the
+          Budapest University of Technology and Economics.
+        </p>
+      </section>
+
+      <div class="divider"></div>
+
+
+      <section id="research">
+        <h2>Research</h2>
+
+        <p>
+          My research focuses on model-based deep learning for computational imaging and inverse problems.
+          I formulate imaging tasks as regularised inverse problems, select suitable optimisation algorithms,
+          and unroll their iterative updates into trainable neural architectures. This allows known components
+          of the image-formation model and physical structure of the problem to be explicitly incorporated into
+          the network, rather than learned entirely from data.
+        </p>
+
+        <p>
+          The goal is to develop reconstruction methods that combine the interpretability and structure of
+          classical optimisation with the representational power of deep learning, while reducing computational
+          complexity and training-data requirements.
+        </p>
+
+        <div class="research-highlight">
+          Current focus: indirect Time-of-Flight (iToF) depth reconstruction, including
+          deconvolution of scattering effects from complex-valued I/Q measurements.
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section id="interests">
+        <h2>Research Interests</h2>
+
+        <div class="interest-grid">
+          <div class="interest">Computational Imaging</div>
+          <div class="interest">Inverse Problems</div>
+          <div class="interest">Algorithm Unrolling</div>
+          <div class="interest">Model-Based Deep Learning</div>
+          <div class="interest">Image Reconstruction</div>
+          <div class="interest">Time-of-Flight Imaging</div>
+          <div class="interest">Regularisation &amp; Optimisation</div>
+          <div class="interest">Efficient Edge AI</div>
+        </div>
+      </section>
+
+      <footer>
+        Hosea Imbo Agure · Mid Sweden University
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
